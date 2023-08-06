@@ -24,16 +24,14 @@ const RadioButton = ({
   disabled,
   ...props
 }: RadioButtonProps) => {
-  const [checked, setChecked] = useState(!!isChecked);
+  const [checked, setChecked] = useState(isChecked);
 
-  useEffect(() => {
-    if (onCheck) {
-      onCheck(checked);
-    }
-  }, [checked, onCheck]);
+  const handleChange = () => {
+    setChecked(!checked);
+  };
 
   return (
-    <S.Wrapper onClick={() => setChecked(!checked)}>
+    <S.Wrapper onChange={handleChange}>
       <S.RadioButton
         type="radio"
         id={id}
@@ -43,11 +41,9 @@ const RadioButton = ({
         checked={checked}
         {...props}
       />
-      {!!children && (
-        <S.Label htmlFor={id} name={name} labelColor={labelColor}>
-          {children}
-        </S.Label>
-      )}
+      <S.Label htmlFor={id} labelColor={labelColor}>
+        {children}
+      </S.Label>
     </S.Wrapper>
   );
 };

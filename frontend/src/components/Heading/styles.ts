@@ -56,8 +56,7 @@ export const Heading = styled.h1<HeadingProps>`
     font-family: ${theme.font.primary};
 
     ${media.lessThan("medium")`
-    font-size: ${theme.font.sizes.medium};
-
+      font-size: ${theme.font.sizes.medium};
     `}
 
     ${headingModifiers[size](theme)}
