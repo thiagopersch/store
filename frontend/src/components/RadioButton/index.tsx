@@ -3,7 +3,7 @@ import * as S from "./styles";
 import { DefaultTheme } from "styled-components";
 
 export type RadioButtonProps = InputHTMLAttributes<HTMLInputElement> & {
-  children?: string | undefined;
+  children?: string | React.ReactNode;
   id?: string;
   name?: string;
   value?: string;
@@ -21,14 +21,14 @@ const RadioButton = ({
 }: RadioButtonProps) => {
   return (
     <S.Wrapper>
-      <S.RadioButton
-        type="radio"
-        id={id}
-        name={name}
-        value={value}
-        checked={checked}
-      />
       <S.Label htmlFor={id} id={id} labelColor={labelColor}>
+        <S.RadioButton
+          type="radio"
+          id={id}
+          name={name}
+          value={value}
+          checked={checked}
+        />
         {children}
       </S.Label>
     </S.Wrapper>
