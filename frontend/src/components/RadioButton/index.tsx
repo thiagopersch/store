@@ -1,4 +1,4 @@
-import { InputHTMLAttributes } from "react";
+import { InputHTMLAttributes, useEffect, useState } from "react";
 import * as S from "./styles";
 import { DefaultTheme } from "styled-components";
 
@@ -9,6 +9,8 @@ export type RadioButtonProps = InputHTMLAttributes<HTMLInputElement> & {
   value?: string;
   checked?: boolean;
   labelColor?: keyof DefaultTheme["colors"];
+  isChecked?: boolean;
+  onCheck?: (status: boolean) => void;
 };
 
 const RadioButton = ({
@@ -16,21 +18,36 @@ const RadioButton = ({
   id,
   name,
   value,
-  checked = true,
   labelColor,
+  isChecked,
+  onCheck,
+  disabled,
+  ...props
 }: RadioButtonProps) => {
+  const [checked, setChecked] = useState(!!isChecked);
+
+  useEffect(() => {
+    if (onCheck) {
+      onCheck(checked);
+    }
+  }, [checked, onCheck]);
+
   return (
-    <S.Wrapper>
-      <S.Label htmlFor={id} id={id} labelColor={labelColor}>
-        <S.RadioButton
-          type="radio"
-          id={id}
-          name={name}
-          value={value}
-          checked={checked}
-        />
-        {children}
-      </S.Label>
+    <S.Wrapper onClick={() => setChecked(!checked)}>
+      <S.RadioButton
+        type="radio"
+        id={id}
+        name={name}
+        value={value}
+        disabled={disabled}
+        checked={checked}
+        {...props}
+      />
+      {!!children && (
+        <S.Label htmlFor={id} name={name} labelColor={labelColor}>
+          {children}
+        </S.Label>
+      )}
     </S.Wrapper>
   );
 };

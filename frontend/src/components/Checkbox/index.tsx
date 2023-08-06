@@ -32,7 +32,7 @@ const Checkbox = ({
     if (onCheck) {
       onCheck(checked);
     }
-  }, [checked]);
+  }, [checked, onCheck]);
 
   return (
     <S.Wrapper onClick={() => setChecked(!checked)}>

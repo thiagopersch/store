@@ -5,7 +5,7 @@ import { RadioButtonProps } from ".";
 export const Wrapper = styled.div`
   ${({ theme }) => css`
     display: flex;
-    place-content: center;
+    cursor: pointer;
   `}
 `;
 
@@ -19,5 +19,21 @@ export const Label = styled.label<RadioButtonProps>`
 `;
 
 export const RadioButton = styled.input`
-  ${({ theme }) => css``}
+  ${({ theme }) => css`
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: ${theme.colors.white};
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+
+    & + & {
+      margin-top: 1em;
+    }
+  `}
 `;

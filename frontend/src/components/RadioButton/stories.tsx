@@ -7,7 +7,6 @@ const meta: Meta<typeof RadioButton> = {
   args: {
     children: "RadioButton",
     id: "radioButton",
-    name: "radioButton",
   },
   argTypes: {
     children: { type: "string" },
