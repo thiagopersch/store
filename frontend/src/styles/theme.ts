@@ -1,8 +1,10 @@
 export default {
   colors: {
-    primaryColor: "#2A3A77",
+    primaryColor: "#6314A8",
     primaryColor80: "rgba(42, 58, 119, 0.8)",
     primaryColor60: "rgba(42, 58, 119, 0.6)",
+    secondary: "#D960AB",
+    slogan: "#426CB4",
     primaryRed: "#FF0031",
     babyBlue: "#B0E0E6",
     babyYellow: "#FFFACD",
@@ -13,7 +15,7 @@ export default {
     white: "#FFFFFF",
     darkGray: "#808080",
     lightGray: "#C0C0C0",
-    Brown: "#964B00",
+    brown: "#964B00",
     alert: "#FFB946",
     danger: "#F7685B",
     lightRed: "#F0758D",

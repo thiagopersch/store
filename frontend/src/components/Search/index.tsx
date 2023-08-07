@@ -11,7 +11,7 @@ const Search = styled.div`
   width: 100%;
 
   &:hover {
-    background-color: ${darken(0.5, theme.colors.white)};,
+    background-color: ${darken(0.1, theme.colors.white)};,
   },
   ${media.lessThan("medium")`
     margin-left: ${theme.spacings.small};
