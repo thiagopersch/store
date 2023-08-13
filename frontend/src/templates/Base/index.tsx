@@ -1,7 +1,7 @@
 import { useCallback, useRef, useImperativeHandle, forwardRef } from "react";
 
 import Navbar from "@/components/Navbar";
-import PageContainer from "@/components/PageContainer ";
+import PageContainer from "@/components/PageContainer";
 
 import * as S from "./styles";
 

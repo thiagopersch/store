@@ -61,7 +61,7 @@ export default {
     lteMedium: "(max-width: 768px)",
   },
   transition: {
-    fast: "all 0.3s ease-in-out;",
+    fast: "all 0.2s ease-in-out;",
     normal: "all 1s ease-in-out;",
     slow: "all 2s ease-in-out;",
   },
