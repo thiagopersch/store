@@ -1,7 +1,7 @@
-import { Story, Meta } from "@storybook/react";
-import Heading, { HeadingProps } from ".";
+import { StoryObj, Meta } from "@storybook/react";
+import Heading from ".";
 
-export default {
+const meta: Meta<typeof Heading> = {
   title: "Heading",
   component: Heading,
   args: {
@@ -9,11 +9,18 @@ export default {
   },
   argTypes: {
     children: { type: "string" },
+    color: { type: "string" },
   },
-} as Meta;
+};
 
-export const Light: Story<HeadingProps> = (args) => <Heading {...args} />;
+export default meta;
+type Story = StoryObj<typeof Heading>;
 
-Light.args = {
-  children: "My Heading",
+export const Default: Story = {
+  args: {
+    children: "My Heading",
+    size: "lg",
+    color: "primaryColor",
+    textAlign: "left",
+  },
 };

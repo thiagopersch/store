@@ -87,7 +87,7 @@ const wrapperModifiers = {
     padding: 10px;
 
     &:hover {
-      background: ${darken(0.05, theme.colors.white)};
+      background: ${darken(0.2, theme.colors.white)};
       box-shadow: ${theme.shadow.hover};
     }
 
@@ -147,7 +147,7 @@ export const Wrapper = styled.button<WrapperProps>`
     border: 0;
     outline: none;
     border-radius: 0.6rem;
-    padding: ${theme.spacings.small};
+    padding: ${theme.spacings.medium} !important;
     text-decoration: none;
     cursor: pointer;
     font-family: ${theme.font.primary};

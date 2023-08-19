@@ -17,4 +17,7 @@ module.exports = {
   docs: {
     autodocs: true,
   },
+  parameters: {
+    controls: { expanded: true },
+  },
 };

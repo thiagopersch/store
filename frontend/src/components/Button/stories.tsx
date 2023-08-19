@@ -5,11 +5,6 @@ import Button, { ButtonProps } from ".";
 const meta: Meta<typeof Button> = {
   title: "Button",
   component: Button,
-  tags: ["autodocs"],
-  parameters: {
-    layout: "centered",
-    controls: { expanded: true },
-  },
   argTypes: {
     children: {
       type: "string",
@@ -18,12 +13,15 @@ const meta: Meta<typeof Button> = {
       type: undefined,
     },
     size: {
-      control: { type: "radio" },
+      control: { type: "select" },
       options: ["small", "medium", "large"],
     },
     styleType: {
-      control: { type: "radio" },
+      control: { type: "select" },
       options: ["normal", "rounded", "outlined", "secondary", "circle"],
+    },
+    fullWidth: {
+      type: "boolean",
     },
   },
 };
@@ -36,15 +34,17 @@ export const Default: Story = {
     children: "Button",
     size: "small",
     styleType: "normal",
+    fullWidth: false,
   },
 };
 
-export const widthIcon: Story = {
+export const withIcon: Story = {
   args: {
     size: "large",
     children: "Adicionar Pessoa",
     icon: <PlusCircle />,
     styleType: "normal",
+    fullWidth: false,
   },
 };
 
@@ -53,5 +53,6 @@ export const CircleWithIcon: Story = {
     size: "large",
     icon: <PlusCircle />,
     styleType: "circle",
+    children: "",
   },
 };

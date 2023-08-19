@@ -7,7 +7,7 @@ const meta: Meta<typeof TextInput> = {
   parameters: {
     layout: "fullscreen",
     backgrounds: {
-      default: "dark",
+      default: "white",
     },
   },
   args: {

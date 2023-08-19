@@ -25,6 +25,7 @@ const Navbar = () => {
             <Link href="/">Inicio</Link>
           </S.MenuItem>
           <S.MenuItem>
+            {/*eslint-disable-next-line react/no-children-prop */}
             <Dropdown children="Cadastros" />
           </S.MenuItem>
         </S.MenuList>

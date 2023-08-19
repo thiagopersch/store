@@ -4,9 +4,6 @@ import Checkbox from ".";
 const meta: Meta<typeof Checkbox> = {
   title: "Checkbox",
   component: Checkbox,
-  parameters: {
-    controls: { expanded: true },
-  },
   argTypes: {
     label: { type: "string" },
     labelColor: { type: "string" },

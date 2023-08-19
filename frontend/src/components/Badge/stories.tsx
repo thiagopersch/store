@@ -5,9 +5,6 @@ import Badge from ".";
 const meta: Meta<typeof Badge> = {
   title: "Badge",
   component: Badge,
-  parameters: {
-    controls: { expanded: true },
-  },
   argTypes: {
     children: {
       type: "string",

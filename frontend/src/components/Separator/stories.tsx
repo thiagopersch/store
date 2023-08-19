@@ -1,13 +1,17 @@
-import { Story, Meta } from "@storybook/react";
-
+import { StoryObj, Meta } from "@storybook/react";
 import Separator from ".";
+import SectionContainer from "../SectionContainer";
 
-export default {
+const meta: Meta<typeof Separator> = {
   title: "Separator",
   component: Separator,
-  args: {
-    Separator,
-  },
-} as Meta;
+};
 
-export const Default: Story = (args) => <Separator {...args} />;
+export default meta;
+type Story = StoryObj<typeof Separator>;
+
+export const Default = (args: Story) => (
+  <SectionContainer>
+    <Separator />
+  </SectionContainer>
+);
