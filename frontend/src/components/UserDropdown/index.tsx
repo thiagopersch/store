@@ -7,7 +7,7 @@ import Button from "../Button";
 import { User } from "@styled-icons/feather";
 
 type UserDropdownProps = {
-  username: string;
+  username?: string;
   isOpen?: boolean;
 };
 const UserDropdown = ({ username, isOpen = true }: UserDropdownProps) => {
@@ -23,7 +23,7 @@ const UserDropdown = ({ username, isOpen = true }: UserDropdownProps) => {
 
   return (
     <S.Wrapper>
-      {username ? (
+      {!username ? (
         <S.WrapperButton>
           <Link href="/login">
             <Button size="large" styleType="circle" icon={<User />} />

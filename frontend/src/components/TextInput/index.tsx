@@ -6,7 +6,6 @@ import {
   useState,
   CSSProperties,
   useCallback,
-  useEffect,
 } from "react";
 import { mergeRefs } from "react-merge-refs";
 
@@ -22,9 +21,10 @@ export type InputAs = "input" | "textarea";
 
 export type TextInputProps = InputHtmlProps & {
   name: string;
-  label: string;
+  label?: string;
   as?: InputAs;
   size?: "huge" | "large" | "medium" | "small";
+  rounded?: boolean;
   type?: string;
   formRegister?: boolean;
   icon?: React.ReactNode;
@@ -43,6 +43,7 @@ const TextInput: React.ForwardRefRenderFunction<
     as = "input",
     size = "large",
     name,
+    rounded = false,
     label,
     value,
     icon,
@@ -53,7 +54,7 @@ const TextInput: React.ForwardRefRenderFunction<
     onClickIcon,
     ...rest
   },
-  ref
+  ref,
 ) => {
   const [fieldValue, setFieldValue] = useState<string>();
   const fieldRef = useRef<HTMLInputElement | HTMLTextAreaElement>(null);
@@ -82,7 +83,7 @@ const TextInput: React.ForwardRefRenderFunction<
         return masked || "";
       });
     },
-    [mask]
+    [mask],
   );
 
   const inputHasValue = !!fieldRef.current?.value;
@@ -104,6 +105,7 @@ const TextInput: React.ForwardRefRenderFunction<
           <span>{label}</span>
           <S.InputContainer size={size} hasIcon={!!icon}>
             <S.Input
+              rounded={rounded}
               inputSize={size}
               onChange={handleChange}
               id={name}

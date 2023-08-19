@@ -95,6 +95,18 @@ const wrapperModifiers = {
       color: ${theme.colors.primaryColor};
     }
   `,
+  none: (theme: DefaultTheme) => css`
+    background: transparent;
+    height: 10rem;
+    width: 5rem;
+    border-radius: 10rem;
+    border: 0;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.2);
+      box-shadow: ${theme.shadow.hover};
+    }
+  `,
 };
 
 const sizeLabelModifiers = {

@@ -123,7 +123,7 @@ export const Label = styled.label<LabelProps>`
     border-radius: 0.3rem;
 
     span {
-      padding: 0 0.3rem;
+      padding: 0.3rem 0.5rem;
       position: absolute;
       left: 1rem;
       background-color: ${theme.colors.white};
@@ -217,18 +217,22 @@ const inputModifiers = {
   disabled: (theme: DefaultTheme) => css`
     color: ${theme.colors.lightGray};
   `,
+  rounded: (theme: DefaultTheme) => css`
+    border-radius: 10rem;
+  `,
 };
 
 type InputProps = {
   inputSize: "huge" | "large" | "medium" | "small";
+  rounded: boolean;
 };
 export const Input = styled.input<InputProps>`
-  ${({ theme, inputSize, disabled }) => css`
+  ${({ theme, inputSize, disabled, rounded }) => css`
     &:not(input) {
       ${TextArea(theme)}
     }
 
-    background: transparent;
+    background: ${theme.colors.white};
     border: 0.05rem solid ${theme.colors.primaryColor};
     outline: 0;
     border-radius: 0.3rem;
@@ -247,13 +251,7 @@ export const Input = styled.input<InputProps>`
 
     ${inputModifiers[inputSize](theme)}
     ${!!disabled && inputModifiers.disabled(theme)}
-  `}
-`;
-
-export const ErrorMessage = styled.span`
-  ${({ theme }) => css`
-    font-size: ${theme.font.sizes.xsmall};
-    color: ${theme.colors.primaryRed};
+    ${!!rounded && inputModifiers.rounded(theme)}
   `}
 `;
 

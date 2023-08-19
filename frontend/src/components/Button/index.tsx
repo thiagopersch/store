@@ -25,7 +25,13 @@ export type ButtonProps = {
     | "xxlarge"
     | "huge"
     | "xhuge";
-  styleType?: "normal" | "rounded" | "outlined" | "secondary" | "circle";
+  styleType?:
+    | "normal"
+    | "rounded"
+    | "outlined"
+    | "secondary"
+    | "circle"
+    | "none";
 } & ButtonTypes;
 
 const Button: React.ForwardRefRenderFunction<HTMLButtonElement, ButtonProps> = (
@@ -40,7 +46,7 @@ const Button: React.ForwardRefRenderFunction<HTMLButtonElement, ButtonProps> = (
     sizeLabel = "small",
     ...props
   },
-  ref
+  ref,
 ) => (
   <S.Wrapper
     size={size}

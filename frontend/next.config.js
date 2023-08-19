@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-
+module.exports = {
   optimizeFonts: true,
 
   swcMinify: true,
+
+  reactStrictMode: true,
 
   compiler: {
     styledComponents: true,
@@ -31,7 +31,7 @@ const nextConfig = {
       test: /\.svg$/,
       use: ["@svgr/webpack"],
     });
+
+    return config;
   },
 };
-
-module.exports = nextConfig;

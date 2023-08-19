@@ -1,8 +1,9 @@
 export default {
   colors: {
     primaryColor: "#6314A8",
-    primaryColor80: "rgba(42, 58, 119, 0.8)",
-    primaryColor60: "rgba(42, 58, 119, 0.6)",
+    primaryColor90: "rgba(99, 20, 168, 0.9)",
+    primaryColor80: "rgba(99, 20, 168, 0.8)",
+    primaryColor60: "rgba(99, 20, 168, 0.6)",
     secondary: "#D960AB",
     slogan: "#426CB4",
     primaryRed: "#FF0031",

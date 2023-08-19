@@ -1,3 +1,4 @@
+import { darken } from "polished";
 import styled, { css, DefaultTheme } from "styled-components";
 import media from "styled-media-query";
 
@@ -20,6 +21,12 @@ export const WrapperLogo = styled.div`
     font-family: ${theme.font.secondary};
     font-size: ${theme.font.sizes.medium};
     height: 100%;
+    padding: 1rem;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
 
     > span {
       font-weight: ${theme.font.weight.normal};
@@ -77,16 +84,16 @@ export const MenuItem = styled.li<MenuItemProps>`
       width: 100%;
       height: 0.2rem;
       border-radius: 10rem;
-      background-color: ${theme.colors.primaryColor};
+      background-color: ${theme.colors.white};
       bottom: 0;
       left: 0;
-      transform-origin: right;
+      transform-origin: center;
       transform: scaleX(0);
-      transition: transform 0.3s ease-in-out;
+      transition: transform 0.2s ease-in-out;
     }
 
     &:hover::before {
-      transform-origin: left;
+      transform-origin: center;
       transform: scaleX(1);
     }
 
@@ -120,4 +127,34 @@ export const MenuButton = styled.div`
     width: 15rem;
     max-width: 50rem;
   `}
+`;
+
+export const Search = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    justify-content: center;
+
+    ${media.lessThan("medium")`
+      display: none;
+    `}
+  `}
+`;
+
+export const NotificationLogin = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    gap: 2rem;
+    padding: ${theme.spacings.large};
+  `}
+`;
+
+export const Header = styled.header`
+  ${({ theme }) => css`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: ${theme.colors.primaryColor90};
+    width: 100%;
+    height: 5rem;
+  `};
 `;
