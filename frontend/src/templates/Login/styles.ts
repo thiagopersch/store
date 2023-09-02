@@ -3,13 +3,12 @@ import media from "styled-media-query";
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
-    background: #e9e9e9e9;
+    background: #fafafafa;
     padding: ${theme.spacings.medium};
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    box-shadow: ${theme.shadow.default};
   `}
 `;
 
