@@ -25,7 +25,7 @@ const UserDropdown = ({ username, isOpen = true }: UserDropdownProps) => {
     <S.Wrapper>
       {!username ? (
         <S.WrapperButton>
-          <Link href="/login">
+          <Link href="/auth/login">
             <Button size="large" styleType="circle" icon={<User />} />
           </Link>
         </S.WrapperButton>

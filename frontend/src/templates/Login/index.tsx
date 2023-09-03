@@ -38,7 +38,7 @@ const Login = () => {
                 <TextComponent color="darkGray">
                   Não tem cadastro?
                 </TextComponent>
-                <Link href="/register" passHref>
+                <Link href="/auth/registration" passHref>
                   <TextComponent color="primaryColor">
                     cadastre-se
                   </TextComponent>
