@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { SectionContainerProps } from ".";
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`

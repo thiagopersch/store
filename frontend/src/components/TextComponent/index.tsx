@@ -1,8 +1,9 @@
+import { ReactNode } from "react";
 import { DefaultTheme } from "styled-components";
 import * as S from "./styles";
 
 export type TextComponentProps = {
-  children?: string;
+  children?: string | ReactNode;
   color?: keyof DefaultTheme["colors"];
 };
 
